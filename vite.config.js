@@ -17,8 +17,8 @@ export default defineConfig({
     rollupOptions: {
       external: [
         ...builtinModules,
-        ...Object.keys(packageJson.dependencies),
-        ...Object.keys(packageJson.peerDependencies),
+        ...Object.keys(packageJson.dependencies || {}),
+        ...Object.keys(packageJson.peerDependencies || {}),
       ],
     },
     sourcemap: false,
