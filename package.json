@@ -1,0 +1,87 @@
+{
+  "name": "@stone-flower-org/vite-plugin-copy-static",
+  "version": "0.1.0",
+  "description": "Vite plugin for copying static files",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "yarn clean:build && vite build",
+    "clean": "yarn clean:build && yarn clean:report",
+    "clean:build": "rm -rf ./dist",
+    "clean:report": "rm -rf ./report",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:format": "eslint --fix . --ext .js,.ts",
+    "lint:staged": "lint-staged",
+    "prepare": "./scripts/prepare.sh",
+    "test": "vitest run",
+    "test:coverage": "vitest run --silent --coverage",
+    "typecheck": "tsc --noEmit --project ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stone-flower-org/vite-plugin-copy-static.git"
+  },
+  "keywords": [
+    "vite plugin",
+    "static files copy"
+  ],
+  "author": "Dmitrii Gorbachev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stone-flower-org/vite-plugin-copy-static/issues"
+  },
+  "homepage": "https://github.com/stone-flower-org/vite-plugin-copy-static#readme",
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.8",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "@vitest/coverage-v8": "^2.1.4",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vitest": "^0.3.18",
+    "eslint-plugin-vitest-globals": "^1.5.0",
+    "esprima": "^4.0.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.4"
+  }
+}

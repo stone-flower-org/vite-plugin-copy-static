@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Project
+/*
+
+!.husky
+!docs
+!scripts
+!src
+!tests
+!.eslintrc.js
+!.gitignore
+!.prettierrc.js
+!LICENSE
+!package.json
+!Readme.md
+!tsconfig.json
+!tsconfig.production.json
+!vite.config.js
+!vitest-setup.js
+!vitest.config.js
+!yarn.lock
+
+tests/.tmp
