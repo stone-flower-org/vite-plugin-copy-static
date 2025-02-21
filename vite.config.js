@@ -12,7 +12,13 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: packageJson.name,
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => {
+        let extension = { es: 'mjs' }[format];
+
+        extension = extension ? extension : 'js';
+
+        return `index.${format}.${extension}`;
+      },
     },
     rollupOptions: {
       external: [
