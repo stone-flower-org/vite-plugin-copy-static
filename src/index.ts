@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import mimeTypes from 'mime-types';
-import { ResolvedConfig, Plugin, Connect } from 'vite';
+import { Connect, Plugin, ResolvedConfig } from 'vite';
 
 export interface CopyStaticTarget {
   from: string;

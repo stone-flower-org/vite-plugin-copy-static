@@ -19,9 +19,9 @@
 !scripts
 !src
 !tests
-!.eslintrc.js
+!.editorconfig
 !.gitignore
-!.prettierrc.js
+!biome.json
 !LICENSE
 !package.json
 !Readme.md

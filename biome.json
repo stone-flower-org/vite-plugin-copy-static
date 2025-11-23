@@ -1,0 +1,136 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
+  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**", "!**/dist", "!**/report", "!**/node_modules", "!**/public/mockServiceWorker.js"]
+  },
+  "formatter": {
+    "enabled": true,
+    "useEditorconfig": true,
+    "attributePosition": "multiline",
+    "bracketSameLine": false,
+    "expand": "auto",
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "complexity": {
+        "noAdjacentSpacesInRegex": "error",
+        "noExtraBooleanCast": "error",
+        "noUselessCatch": "error",
+        "noUselessEscapeInRegex": "error"
+      },
+      "correctness": {
+        "noConstAssign": "error",
+        "noConstantCondition": "error",
+        "noEmptyCharacterClassInRegex": "error",
+        "noEmptyPattern": "error",
+        "noGlobalObjectCalls": "error",
+        "noInnerDeclarations": "error",
+        "noInvalidConstructorSuper": "error",
+        "noNonoctalDecimalEscape": "error",
+        "noPrecisionLoss": "error",
+        "noSelfAssign": "error",
+        "noSetterReturn": "error",
+        "noSwitchDeclarations": "error",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "error",
+        "noUnreachableSuper": "error",
+        "noUnsafeFinally": "error",
+        "noUnsafeOptionalChaining": "error",
+        "noUnusedLabels": "error",
+        "noUnusedVariables": "warn",
+        "useIsNan": "error",
+        "useValidForDirection": "error",
+        "useValidTypeof": "error",
+        "useYield": "error",
+        "useExhaustiveDependencies": "warn"
+      },
+      "nursery": { "useConsistentArrowReturn": "error" },
+      "style": {
+        "noRestrictedImports": { "level": "error", "options": { "patterns": [{ "group": ["../**"] }] } },
+        "useConst": "error",
+        "noImplicitBoolean": "off",
+        "useSelfClosingElements": "error"
+      },
+      "suspicious": {
+        "noConsole": "off",
+        "noAssignInExpressions": "off",
+        "noAsyncPromiseExecutor": "error",
+        "noCatchAssign": "error",
+        "noClassAssign": "error",
+        "noCompareNegZero": "error",
+        "noControlCharactersInRegex": "error",
+        "noDebugger": "error",
+        "noDuplicateCase": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateElseIf": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateParameters": "error",
+        "noEmptyBlockStatements": "error",
+        "noFallthroughSwitchClause": "error",
+        "noFunctionAssign": "error",
+        "noGlobalAssign": "error",
+        "noImportAssign": "error",
+        "noIrregularWhitespace": "error",
+        "noMisleadingCharacterClass": "error",
+        "noPrototypeBuiltins": "error",
+        "noRedeclare": "error",
+        "noShadowRestrictedNames": "warn",
+        "noSparseArray": "error",
+        "noUnsafeNegation": "error",
+        "noUselessRegexBackrefs": "error",
+        "noVar": "error",
+        "noWith": "error",
+        "useGetterReturn": "error",
+        "noEmptyInterface": "off",
+        "noExplicitAny": "warn"
+      },
+      "performance": { "noDelete": "warn" }
+    }
+  },
+  "javascript": { "globals": ["vi"], "formatter": { "enabled": true, "quoteStyle": "single" } },
+  "json": { "formatter": { "enabled": true }, "linter": { "enabled": true } },
+  "css": { "formatter": { "enabled": true, "quoteStyle": "single" }, "linter": { "enabled": true } },
+  "overrides": [
+    {
+      "includes": ["src/**"],
+      "linter": {
+        "rules": {
+          "correctness": {},
+          "style": {},
+          "suspicious": { "noConsole": { "level": "warn", "options": { "allow": ["error", "warn"] } } }
+        }
+      }
+    },
+    {
+      "includes": ["src/**/*.test.{js,jsx,ts,tsx}", "tests/**/*"],
+      "linter": { "domains": { "test": "recommended" }, "rules": { "correctness": {}, "style": {}, "suspicious": {} } }
+    }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "useSortedAttributes": { "level": "on", "options": { "sortOrder": "lexicographic" } },
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":NODE:"],
+              ":BLANK_LINE:",
+              ["**", "!@/src/**", "!./**", "!."],
+              ":BLANK_LINE:",
+              ["@/src/**"],
+              ":BLANK_LINE:",
+              ["./**", "."]
+            ]
+          }
+        }
+      }
+    }
+  }
+}

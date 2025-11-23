@@ -1,9 +1,6 @@
 import path from 'path';
 
 import { build, createServer, defineConfig, ViteDevServer } from 'vite';
-
-import copyStatic from '@/src/index';
-
 import {
   clearTmpDirs,
   fetchFileFromServer,
@@ -13,6 +10,8 @@ import {
   resolveFixturesDir,
   setupTmpDir,
 } from '@/tests/utils';
+
+import copyStatic from '@/src/index';
 
 const srcDir = resolveFixturesDir('common/dir');
 
